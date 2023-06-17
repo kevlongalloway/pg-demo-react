@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useState } from 'react';
 
 export default function GuidedMeditation() {
   const [assistantReply, setAssistantReply] = useState('');
@@ -10,18 +9,20 @@ export default function GuidedMeditation() {
   const requestMeditation = async () => {
     setLoading(true);
     try {
-      const response = await axios.post(
-        'https://kevlongalloway.shop/api/guided-meditation',
-        {},
-        {
-          headers: {
-            'Content-Type': 'application/json',
-            Authorization: `Bearer ${accessToken}`,
-          },
-        }
-      );
-      const data = response.data;
-      setAssistantReply(data.response);
+      const response = await fetch('https://kevlongalloway.shop/api/guided-meditation', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${accessToken}`,
+        },
+        body: JSON.stringify({}),
+      });
+      if (response.ok) {
+        const data = await response.json();
+        setAssistantReply(data.response);
+      } else {
+        setAssistantReply('An error occurred while requesting the meditation.');
+      }
     } catch (error) {
       console.error('Error:', error);
       setAssistantReply('An error occurred while requesting the meditation.');
