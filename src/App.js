@@ -4,7 +4,7 @@ import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import Dashboard from './pages/Dashboard';
-import Dashboard from './pages/GuidedMeditation';
+import GuidedMeditation from './pages/GuidedMeditation';
 import Chat from './pages/Chat';
 import { CSSTransition } from 'react-transition-group';
 
