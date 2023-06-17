@@ -1,25 +1,67 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import Header from './components/Header';
+import HomePage from './pages/HomePage';
+import LoginPage from './pages/LoginPage';
+import RegisterPage from './pages/RegisterPage';
+import Dashboard from './pages/Dashboard'
+import Chat from './pages/Chat';
+import { CSSTransition } from 'react-transition-group';
 
-function App() {
+
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+
+export default function App() {
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: (
+        <CSSTransition classNames="fade" timeout={300}>
+          <HomePage />
+        </CSSTransition>
+      ),
+    },
+    {
+      path: "/login",
+      element: (
+        <CSSTransition classNames="fade" timeout={300}>
+          <LoginPage />
+        </CSSTransition>
+      ),
+    },
+    {
+      path: "/register",
+      element: (
+        <CSSTransition classNames="fade" timeout={300}>
+          <RegisterPage />
+        </CSSTransition>
+      ),
+    },
+    {
+      path: "/dashboard",
+      element: (
+        <CSSTransition classNames="fade" timeout={300}>
+          <Dashboard />
+        </CSSTransition>
+      ),
+    },
+    {
+      path: "/chat",
+      element: (
+        <CSSTransition classNames="fade" timeout={300}>
+          <Chat />
+        </CSSTransition>
+      ),
+    },
+  ]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="flex flex-col h-screen">
+      <Header />
+      <RouterProvider router={router} />
+      
     </div>
   );
 }
-
-export default App;
