@@ -3,7 +3,8 @@ import Header from './components/Header';
 import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
-import Dashboard from './pages/Dashboard'
+import Dashboard from './pages/Dashboard';
+import Dashboard from './pages/GuidedMeditation';
 import Chat from './pages/Chat';
 import { CSSTransition } from 'react-transition-group';
 
@@ -52,6 +53,14 @@ export default function App() {
       element: (
         <CSSTransition classNames="fade" timeout={300}>
           <Chat />
+        </CSSTransition>
+      ),
+    },
+    {
+      path: "/guided-meditation",
+      element: (
+        <CSSTransition classNames="fade" timeout={300}>
+          <GuidedMeditation />
         </CSSTransition>
       ),
     },
