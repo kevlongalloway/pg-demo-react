@@ -33,6 +33,9 @@ export default function GuidedMeditation() {
 
   return (
     <div className="container mx-auto py-8">
+      <div className="flex flex-initial">
+        <BackButton to="/dashboard" />
+      </div>
       <h1 className="text-2xl font-bold mb-4">Guided Meditation</h1>
       <div className="bg-white rounded-lg shadow-lg p-4" id="meditation-container">
         <p className="text-lg font-bold mb-2" id="assistant-reply">
