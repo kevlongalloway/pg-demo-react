@@ -84,10 +84,10 @@ export default function Chat() {
           messages.map((chat, index) => (
             <div
               key={index}
-              className={`mb-2 max-w-md mx-auto p-4 rounded-lg text-white ${
+              className={`mb-2 max-w-md mx-auto p-4 rounded-lg ${
                 chat.role === 'assistant'
-                  ? 'bg-blue-500 mr-auto'
-                  : 'bg-gray-300 text-gray-800 ml-auto'
+                  ? 'bg-blue-500 text-white mr-auto'
+                  : 'bg-gray-300 text-black ml-auto'
               }`}
             >
               <span className="font-bold">{ucfirst(chat.role)}: </span>
