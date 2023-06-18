@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import ResetButton from '../components/ResetButton';
+import BackButton from '../components/BackButton';
 
 export default function PositiveAffirmation() {
   const [affirmation, setAffirmation] = useState('');
