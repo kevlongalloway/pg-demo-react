@@ -5,6 +5,8 @@ import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
 import Dashboard from './pages/Dashboard';
 import GuidedMeditation from './pages/GuidedMeditation';
+import BreathingExercise from './pages/BreathingExercise';
+import PositiveAffirmation from './pages/PositiveAffirmation';
 import Chat from './pages/Chat';
 import { CSSTransition } from 'react-transition-group';
 
@@ -61,6 +63,22 @@ export default function App() {
       element: (
         <CSSTransition classNames="fade" timeout={300}>
           <GuidedMeditation />
+        </CSSTransition>
+      ),
+    },
+    {
+      path: "/breathing-exercise",
+      element: (
+        <CSSTransition classNames="fade" timeout={300}>
+          <BreathingExercise />
+        </CSSTransition>
+      ),
+    },
+    {
+      path: "/positive-affirmation",
+      element: (
+        <CSSTransition classNames="fade" timeout={300}>
+          <PositiveAffirmation />
         </CSSTransition>
       ),
     },

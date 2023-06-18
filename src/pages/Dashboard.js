@@ -67,20 +67,20 @@ function Dashboard() {
                     </Link>
                 </div>
                 <div className="mb-4">
-                    <a
-                        href="./Register.html"
+                    <Link
+                        to="/breathing-exercise"
                         className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                     >
                         Breathing Exercise
-                    </a>
+                    </Link>
                 </div>
                 <div className="mb-4">
-                    <a
-                        href="./Register.html"
+                    <Link
+                        to="/positive-affirmation"
                         className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                     >
                         Positive Affirmation
-                    </a>
+                    </Link>
                     {showModal && (
                         <Modal closeModal={handleCloseModal}>
                             <QuestionnaireModalContent />
