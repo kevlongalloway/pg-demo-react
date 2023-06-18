@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import ResetButton from '../components/ResetButton';
 
 export default function BreathingExercise() {
   const [assistantReply, setAssistantReply] = useState('');
