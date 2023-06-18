@@ -18,7 +18,7 @@ export default function PositiveAffirmation() {
       });
       if (response.ok) {
         const data = await response.json();
-        setAffirmation(data.affirmation);
+        setAffirmation(data.response);
       } else {
         setAffirmation('An error occurred while fetching the positive affirmation.');
       }
