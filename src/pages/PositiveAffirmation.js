@@ -10,7 +10,7 @@ export default function PositiveAffirmation() {
     setLoading(true);
     try {
       const response = await fetch('https://kevlongalloway.shop/api/positive-affirmation', {
-        method: 'GET',
+        method: 'POST',
         headers: {
           'Content-Type': 'application/json',
           Authorization: `Bearer ${accessToken}`,
