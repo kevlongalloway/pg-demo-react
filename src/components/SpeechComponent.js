@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 const SpeechComponent = ({ text, onSpeakingChange }) => {
+  const [speechRequested, setSpeechRequested] = useState(false);
   const [speaking, setSpeaking] = useState(false);
   const [speech, setSpeech] = useState(null);
 
@@ -47,26 +48,30 @@ const SpeechComponent = ({ text, onSpeakingChange }) => {
   useEffect(() => {
     if (text) {
       speakText(text);
+      setSpeechRequested(true);
       onSpeakingChange(true);
     }
   }, [text, onSpeakingChange]);
 
   return (
     <>
-      {speaking && (
+      {speechRequested && (
         <>
-          <button
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-            onClick={pauseSpeech}
-          >
-            Pause
-          </button>
-          <button
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-            onClick={resumeSpeech}
-          >
-            Resume
-          </button>
+          {speaking ? (
+            <button
+              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              onClick={pauseSpeech}
+            >
+              Pause
+            </button>
+          ) : (
+            <button
+              className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+              onClick={resumeSpeech}
+            >
+              Resume
+            </button>
+          )}
         </>
       )}
     </>
