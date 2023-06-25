@@ -6,7 +6,6 @@ export default function BreathingExercise() {
   const [loading, setLoading] = useState(false);
   const [speaking, setSpeaking] = useState(false);
   const [speech, setSpeech] = useState(null);
-  const [audioUrl, setAudioUrl] = useState(null);
 
   const accessToken = localStorage.getItem('access_token');
 
@@ -24,7 +23,7 @@ export default function BreathingExercise() {
       if (response.ok) {
         const data = await response.json();
         setAssistantReply(data.response);
-        await synthesizeAudio(data.response); // Synthesize and play audio
+        speakText(data.response); // Speak the assistant reply
       } else {
         setAssistantReply('An error occurred while starting the breathing exercise.');
       }
@@ -36,40 +35,17 @@ export default function BreathingExercise() {
     }
   };
 
-  const synthesizeAudio = async (text) => {
-    try {
-      const audioResponse = await fetch('https://texttospeech.googleapis.com/v1beta1/{parent=projects/*/locations/*}:synthesizeLongAudio', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${accessToken}`,
-        },
-        body: JSON.stringify({
-          // Provide the necessary request parameters for synthesizing audio
-          // For example, you can specify the text, voice, and other options
-          text: text,
-          voice: { /* Specify the voice options */ },
-        }),
-      });
-
-      if (audioResponse.ok) {
-        const audioData = await audioResponse.json();
-        const audioUrl = audioData.audioUrl;
-        setAudioUrl(audioUrl);
-        playAudio();
-      } else {
-        console.error('Error synthesizing audio');
-      }
-    } catch (error) {
-      console.error('Error:', error);
+  const speakText = (text) => {
+    if (!speech) {
+      const speechUtterance = new SpeechSynthesisUtterance(text);
+      speechUtterance.lang = 'en-US';
+      setSpeech(speechUtterance);
+    } else {
+      speech.text = text;
     }
-  };
-
-  const playAudio = () => {
-    const audioElement = new Audio(audioUrl);
-    audioElement.onplay = () => setSpeaking(true);
-    audioElement.onended = () => setSpeaking(false);
-    audioElement.play();
+    speech.onstart = () => setSpeaking(true);
+    speech.onend = () => setSpeaking(false);
+    window.speechSynthesis.speak(speech);
   };
 
   const pauseSpeech = () => {
