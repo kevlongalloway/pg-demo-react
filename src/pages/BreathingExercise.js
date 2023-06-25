@@ -5,6 +5,7 @@ import SpeechComponent from '../components/SpeechComponent';
 export default function BreathingExercise() {
   const [assistantReply, setAssistantReply] = useState('');
   const [loading, setLoading] = useState(false);
+  const [speaking, setSpeaking] = useState(false);
 
   const accessToken = localStorage.getItem('access_token');
 
