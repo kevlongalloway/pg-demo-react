@@ -68,7 +68,8 @@ export default function BreathingExercise() {
       window.speechSynthesis.cancel();
       setSpeech(null);
     };
-  }, []);
+  }, [speech]);
+
 
   return (
     <div className="container mx-auto py-8">
@@ -88,7 +89,7 @@ export default function BreathingExercise() {
         >
           {loading ? 'Loading...' : 'Start Breathing Exercise'}
         </button>
-        {speaking && (
+        {speech && (
           <>
             <button
               className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
