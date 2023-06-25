@@ -12,12 +12,12 @@ const SpeechComponent = ({ text, onSpeakingChange }) => {
     } else {
       speech.text = text;
     }
-    speech.onstart = () => setSpeaking(true);
-    speech.onend = () => {
-      setSpeaking(false);
-      onSpeakingChange(false);
-    };
-    window.speechSynthesis.speak(speech);
+
+    if (speech) {
+      speech.onstart = () => setSpeaking(true);
+      speech.onend = () => setSpeaking(false);
+      window.speechSynthesis.speak(speech);
+    }
   };
 
   const pauseSpeech = () => {
