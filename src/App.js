@@ -7,6 +7,7 @@ import GuidedMeditation from './pages/GuidedMeditation';
 import BreathingExercise from './pages/BreathingExercise';
 import PositiveAffirmation from './pages/PositiveAffirmation';
 import Chat from './pages/Chat';
+import AppHomePage from './pages/mobile/AppHomePage';
 import { CSSTransition } from 'react-transition-group';
 
 
@@ -81,12 +82,19 @@ export default function App() {
         </CSSTransition>
       ),
     },
+    {
+      path: "/mobile",
+      element: (
+        <CSSTransition classNames="fade" timeout={300}>
+          <AppHomePage />
+        </CSSTransition>
+      ),
+    },
   ]);
 
   return (
     <div className="flex flex-col h-screen">
       <RouterProvider router={router} />
-      
     </div>
   );
 }
