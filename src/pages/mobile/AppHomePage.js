@@ -15,9 +15,9 @@ export default function AppHomePage() {
   return (
     <div className="relative min-h-screen">
       <CSSTransition in={isLoaded} classNames="fade-in" timeout={1000} unmountOnExit>
-        <h1 className="absolute top-10 left-1/2 transform -translate-x-1/2 z-10 text-customTextColor text-3xl font-bold text-center" style={{
+        <h1 className="absolute top-10 left-1/2 font-sans transform -translate-x-1/2 z-10 text-customTextColor text-3xl font-bold text-center" style={{
         fontSize: "1.5rem",
-        fontFamily: "",
+        fontFamily: "Helvetica",
         letterSpacing: "0.24rem"
       }}>
         Welcome to Pocket Guru!
