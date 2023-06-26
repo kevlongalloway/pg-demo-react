@@ -1,5 +1,5 @@
-import React from 'react';
-import { Fragment, useState } from 'react'
+import React  from 'react';
+import { Fragment, useState, useEffect } from 'react'
 import { Outlet, Link } from "react-router-dom";
 import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react'
 import {
@@ -31,6 +31,13 @@ function classNames(...classes) {
 
 export default function Example() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    // Check if the access_token is set in localStorage
+    const access_token = localStorage.getItem('access_token');
+    setIsLoggedIn(!!access_token);
+  }, []);
 
   return (
     <header className="bg-gray-100">
@@ -114,9 +121,16 @@ export default function Example() {
           </a>
         </Popover.Group>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
-            Log in <span aria-hidden="true">&rarr;</span>
-          </a>
+          {isLoggedIn ? ( // Show "Dashboard" if logged in
+            <a href="/dashboard" className="text-sm font-semibold leading-6 text-gray-900">
+              Dashboard <span aria-hidden="true">&rarr;</span>
+            </a>
+          ) : (
+            // Show "Log In" if not logged in
+            <a href="/login" className="text-sm font-semibold leading-6 text-gray-900">
+              Log In <span aria-hidden="true">&rarr;</span>
+            </a>
+          )}
         </div>
       </nav>
       <Dialog as="div" className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>

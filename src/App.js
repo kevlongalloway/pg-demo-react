@@ -1,5 +1,4 @@
 import React from 'react';
-import Header from './components/Header';
 import HomePage from './pages/HomePage';
 import LoginPage from './pages/LoginPage';
 import RegisterPage from './pages/RegisterPage';
@@ -86,7 +85,6 @@ export default function App() {
 
   return (
     <div className="flex flex-col h-screen">
-      <Header />
       <RouterProvider router={router} />
       
     </div>

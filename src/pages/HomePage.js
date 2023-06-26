@@ -1,9 +1,12 @@
 import * as React from 'react';
 import { Outlet, Link } from "react-router-dom";
+import Header from '../components/Header';
 
 
 export default function HomePage() {
   return (
+  <div>
+    <Header />
     <div className="flex justify-center items-center h-screen">
         <div className="text-center">
             <h1 className="text-4xl font-bold mb-8">Pocket Therapy Demo</h1>
@@ -19,5 +22,6 @@ export default function HomePage() {
             </div>
         </div>
     </div>
+</div>
   );
 }
