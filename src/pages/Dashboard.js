@@ -23,7 +23,7 @@ function Dashboard() {
 
     const checkQuestionnaireCompleted = async () => {
         try {
-            const response = await fetch('https://kevlongalloway.shop/api/questionaire-completed', {
+            const response = await fetch('https://pocketguruai.com/api/questionaire-completed', {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem('access_token')}`,
                 },

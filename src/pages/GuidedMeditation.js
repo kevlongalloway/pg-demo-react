@@ -14,7 +14,7 @@ export default function GuidedMeditation() {
   const requestMeditation = async () => {
     setLoading(true);
     try {
-      const response = await fetch('https://kevlongalloway.shop/api/guided-meditation', {
+      const response = await fetch('https://pocketguruai.com/api/guided-meditation', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

@@ -10,7 +10,7 @@ export default function PositiveAffirmation() {
   const fetchPositiveAffirmation = async () => {
     setLoading(true);
     try {
-      const response = await fetch('https://kevlongalloway.shop/api/positive-affirmation', {
+      const response = await fetch('https://pocketguruai.com/api/positive-affirmation', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

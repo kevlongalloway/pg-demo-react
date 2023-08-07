@@ -3,7 +3,7 @@ import { FaUndo } from 'react-icons/fa';
 
 const ResetButton = ({ onClick }) => {
   const handleReset = () => {
-    fetch('https://kevlongalloway.shop/api/reset-conversation', {
+    fetch('https://pocketguruai.com/api/reset-conversation', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',

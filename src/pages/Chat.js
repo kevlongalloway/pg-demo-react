@@ -9,7 +9,7 @@ export default function Chat() {
   console.log(messages);
 
   const fetchChatMessages = async () => {
-    const response = await fetch('https://kevlongalloway.shop/api/chat', {
+    const response = await fetch('https://pocketguruai.com/api/chat', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -31,7 +31,7 @@ export default function Chat() {
     setMessages(updatedMessages); // Update the messages state with the updated array
     setInputMessage('');
 
-    await fetch('https://kevlongalloway.shop/api/chat', {
+    await fetch('https://pocketguruai.com/api/chat', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

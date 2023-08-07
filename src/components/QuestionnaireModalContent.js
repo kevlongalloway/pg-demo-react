@@ -12,7 +12,7 @@ export default function Questionnaire() {
   }, []);
 
   const fetchQuestions = () => {
-    fetch('https://kevlongalloway.shop/api/questions')
+    fetch('https://pocketguruai.com/api/questions')
       .then((response) => response.json())
       .then((data) => {
         setQuestions(data);
@@ -56,7 +56,7 @@ export default function Questionnaire() {
 
 
 
-    fetch('https://kevlongalloway.shop/api/v1/answers', {
+    fetch('https://pocketguruai.com/api/v1/answers', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

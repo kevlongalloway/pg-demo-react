@@ -15,7 +15,7 @@ export default function RegisterPage() {
     useEffect(() => {
       const checkAuthStatus = async () => {
         try {
-          const response = await fetch('https://kevlongalloway.shop/api/user', {
+          const response = await fetch('https://pocketguruai.com/api/user', {
             headers: {
               'Authorization': `Bearer ${localStorage.getItem('access_token')}`
             }

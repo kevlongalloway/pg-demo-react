@@ -12,7 +12,7 @@ export default function LoginPage() {
 
   useEffect(() => {
     const checkAuthentication = async () => {
-      const response = await fetch('https://kevlongalloway.shop/api/check-authentication', {
+      const response = await fetch('https://pocketguruai.com/api/check-authentication', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',

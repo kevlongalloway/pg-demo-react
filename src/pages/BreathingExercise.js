@@ -14,7 +14,7 @@ export default function BreathingExercise() {
   const startBreathingExercise = async () => {
     setLoading(true);
     try {
-      const response = await fetch('https://kevlongalloway.shop/api/breathing-exercise', {
+      const response = await fetch('https://pocketguruai.com/api/breathing-exercise', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
