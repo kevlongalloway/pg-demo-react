@@ -18,6 +18,7 @@ export default function LoginPage() {
           'Content-Type': 'application/json',
           Authorization: 'Bearer ' + localStorage.getItem('access_token'),
         },
+        credentials: 'include',
       })
         .then((response) => response.json())
         .then(function (data) {
@@ -46,6 +47,7 @@ export default function LoginPage() {
       headers: {
         'Content-Type': 'application/json',
       },
+      credentials: 'include',
       body: JSON.stringify(loginData),
     })
       .then((response) => response.json())
