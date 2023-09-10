@@ -9,7 +9,7 @@ export default function HomePage() {
     <Header />
     <div className="flex justify-center items-center h-screen">
         <div className="text-center">
-            <h1 className="text-4xl font-bold mb-8">Pocket Therapy Demo</h1>
+            <h1 className="text-4xl font-bold mb-8">PocketGuruAI Demo</h1>
             <div className="mb-4">
                 <Link to="login" className="bg-green-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
                     Login
