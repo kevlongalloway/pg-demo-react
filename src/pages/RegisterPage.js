@@ -52,7 +52,7 @@ export default function RegisterPage() {
   
 
     // Send the register request to the server using fetch or your preferred HTTP client library
-    const response = await fetch('https://kevlongalloway.shop/api/register', {
+    const response = await fetch('https://pocketguruai.com/api/register', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',

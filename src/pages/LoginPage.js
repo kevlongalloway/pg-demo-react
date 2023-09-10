@@ -18,6 +18,7 @@ export default function LoginPage() {
           'Content-Type': 'application/json',
           Authorization: 'Bearer ' + localStorage.getItem('access_token'),
         },
+        credentials: 'include',
       })
         .then((response) => response.json())
         .then(function (data) {
@@ -41,11 +42,12 @@ export default function LoginPage() {
     };
 
     // Send the login request to the server using fetch or your preferred HTTP client library
-    const response = await fetch('https://kevlongalloway.shop/api/login', {
+    const response = await fetch('https://pocketguruai.com/api/login', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
+      credentials: 'include',
       body: JSON.stringify(loginData),
     })
       .then((response) => response.json())
